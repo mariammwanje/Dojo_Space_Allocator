@@ -3,4 +3,6 @@ from .import Person
 
 #creating class person
 class Staff(Person):
-    pass
+    def __init__(self, role, ):
+        self.role = role
+        self.office = None

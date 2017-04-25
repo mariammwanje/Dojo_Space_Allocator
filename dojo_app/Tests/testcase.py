@@ -12,7 +12,9 @@ from dojo_app.Staff import Staff
 class LivingSpaceTestCase(unittest.TestCase):
 
     #function for checking whether LivingSpace inherits from Room
-    def does_fellow_inherit(self):
+    def does_livingspace_inherit(self):
+        #assertTrue means checking if the value is true ie assertTrue(a): check the value of a is True
+        #assert: base assert allowing you to write your own assertions
         self.assertTrue(issubclass(LivingSpace, object))
 
 
@@ -22,7 +24,7 @@ class LivingSpaceTestCase(unittest.TestCase):
 class OfficeTestCase(unittest.TestCase):
 
     #function for checking whether Office inherits from Room
-    def does_fellow_inherit(self):
+    def does_office_inherit(self):
         self.assertTrue(issubclass(Office, object))
 
 
@@ -44,5 +46,5 @@ class FellowTestCase(unittest.TestCase):
 class TestCase(unittest.TestCase):
 
     #function for checking whether Staff inherits from Person
-    def does_fellow_inherit(self):
+    def does_staff_inherit(self):
         self.assertTrue(issubclass(Staff, object))
