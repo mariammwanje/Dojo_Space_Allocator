@@ -8,6 +8,24 @@ from dojo_app.Fellow import Fellow
 # importing Staff from Class Staff
 from dojo_app.Staff import Staff
 
+#Unit test for class room
+class RoomTestCase(unittest.TestCase):
+    # function for checking whether a Room Name and room type are strings
+    def is_room_name_and_type_strings(self,room_name,room_type):
+        #checking if room_name is a string
+        if isinstance(str, room_name):
+            self.assertIsInstance(room_name,str)
+            #checking to see if room_type is a string
+            if isinstance(str, room_type):
+                self.assertIsInstance(room_type,str)
+        #if it is not return false
+        else:
+            return (False)
+
+
+#function for checking whether a Room is created
+
+
 #testing to check if LivingSpace inherits from class Room
 class LivingSpaceTestCase(unittest.TestCase):
 
