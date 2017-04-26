@@ -1,8 +1,9 @@
 #importing from class Room
-from .import Room
+from dojo_app.Room import Room
 
 #creating class office
 class Office(Room):
-    def __init__(self):
-        self.office_list = []
-        self.office_occupants = []
+    def __init__(self, room_name):
+        #inheritating from class Room room name and room type
+        Room.__init__(Room, room_name, 'office')
+        self.max_no_persons = 6
