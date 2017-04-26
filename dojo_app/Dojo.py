@@ -37,23 +37,41 @@ class Dojo():
 
 
 
-    def add_person(self, person_name, person_type):
+    def add_person(self, person_name, person_type, wants_accomodation):
         # checking to see if type person_name and person_type are strings
         if isinstance(person_name, str) and isinstance(person_type, str):
             # creating a person  of type staff
             if (person_type == "staff"):
-                self.all_persons.append(Staff(person_name))
+                if (wants_accomodation == "Yes"):
+                    return ("Y")
+                else:
+                    return ("No")
+                self.all_persons.append(Staff(person_name, wants_accomodation))
                 # person of type staff hashas been created successfully using .format() method
-                return (
-                "person_name({}) " + "person_type({}) has been successfully created".format(person_name, person_type))
+                return (person_name + person_type  + wants_accomodation + " has been successfully created")
 
-            elif (person_type == "fellow"):
-                self.all_persons.append(Fellow(person_name))
+            elif (person_type== "fellow"):
+
+                if (wants_accomodation == "Yes"):
+                    return (wants_accomodation() is "Y")
+                else:
+                    return (wants_accomodation is "No")
+                self.all_persons.append(Fellow(person_name, wants_accomodation))
+
                 # person of type fellow has been created successfully using .format() method
-                return (
-                "person_name({}) " + "person_type({}) has been successfully created".format(person_name, person_type))
+                # return (
+                # "person_name({}) " + "person_type({}) has been successfully created".format(person_name, person_type))
+                return (person_name + person_type  + wants_accomodation + " has been successfully created")
 
 
+        #     wants_space = "Yes" if args.get("<wants_space>") is "Y" else "No"
+        #     if wants_space == "No":
+        #         if args["Staff"]:
+        #             new_person = Staff(name)
+        #             self.staff.append(new_person)
+        #         elif args["Fellow"]:
+        #             new_person = Fellow(name)
+        # self.fellows.append(new_person)
         else:
             # if it has not be created successfully
             return ("Person was not created ")

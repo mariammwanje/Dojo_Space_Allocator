@@ -1,47 +1,50 @@
 import unittest
 
 
-from dojo_app.Dojo import Dojo
-from dojo_app.Staff import Staff
+
 from dojo_app.LivingSpace import LivingSpace
 from dojo_app.Room import Room
 from dojo_app.Fellow import Fellow
 from dojo_app.Office import Office
 from dojo_app.Person import Person
-
-
+from dojo_app.Staff import Staff
+from dojo_app.interactive_allocator import andela_dojo
 
 
 class TestCaseRoom(unittest.TestCase):
 
-    def setUp(self):
-        self.andela_dojo_room = Dojo()
+    # def setUp(self):
+    #     self.andela_dojo_room = Dojo()
 
 #creating aunit test for the create room function
-    def test_create_room(self):
+    def test_create_room(self, room_name, room_type):
         #creating a room by using room name ad room type as parameters from create_room function
-        created_room1 = self.andela_dojo_room.create_room("Orange", "office")
-        created_room2 = self.andela_dojo_room.create_room("Orange", "living_space")
+        # created_room1 = self.andela_dojo_room.create_room("Orange", "office")
+        # andela = self.andela_dojo_room.create_room("Orange", "living_space")
+        #creating an object andela_dojo from Dojo class
+        andela_dojo.create_room(room_name, room_type)
 
     # checking that self.all_rooms[0] should be an instance of office.
-        self.assertTrue(isinstance(self.andela_dojo_room.all_rooms[0], Office))
+        self.assertTrue(isinstance(self.andela_dojo.all_rooms[0], Office))
 
 
 # creating aunit test for the create person function
 class TestCasePerson(unittest.TestCase):
     #
-    def setUp(self):
-        #creating an object andela_dojo_Person from Dojo
-        self.andela_dojo_person = Dojo()
+    # def setUp(self):
+    #     #creating an object andela_dojo_Person from Dojo
+    #     self.andela_dojo_person = Dojo()
 
-    def test_add_person(self):
+    def test_add_person(self, person_name, person_type, wants_accomodation):
         # creating a person by using person name and person type as parameters from add_person method function
-        person1 = self.andela_dojo_person.add_person("Neil Armstrong" , "staff")
+        #person1 = self.andela_dojo_person.add_person("Neil Armstrong" , "staff")
+        andela_dojo.add_person(person_name, person_type, wants_accomodation)
+
 
         #person2 = self.andela_dojo_person.add_person("Nelly Armweek" , "Fellow" ,  " Y")
 
         # checking that self.all_person[0] should be an instance of staff.
-        self.assertTrue(isinstance(self.andela_dojo_person.all_persons[0], Staff))
+        self.assertTrue(isinstance(self.andela_dojo.all_persons[0], Staff))
 
 #testing to see if Fellow inherits from Person
 class TestCaseFellow(unittest.TestCase):
@@ -66,8 +69,6 @@ class TestCaseOffice(unittest.TestCase):
     def test_office_inheritence(self):
         # checking is Office is a subclass of Room
         self.assertTrue(issubclass(Office, Room))
-
-
 # The if __name__ == '__main__' convention in python is intended to allow you to write code that
 # can be run directly, or imported. If you import it, that if block is not executed. If you run python.exe myscript.py it is.
 

@@ -1,9 +1,12 @@
+from dojo_app import Fellow
+from dojo_app import Staff
 
 
 class Person():
-
-    def __init__(self,person_name,person_type):
+#addition of a coomodation parameter
+    def __init__(self, person_name, person_type, wants_accomodation):
         self.person_name = person_name
         self.person_type = person_type
+        self.wants_accomodation = wants_accomodation
 
 
