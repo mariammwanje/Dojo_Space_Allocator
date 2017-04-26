@@ -1,9 +1,9 @@
 # from dojo_app.Fellow import Fellow
-from .Fellow import Fellow
-from .LivingSpace import LivingSpace
-from .Office import Office
+from dojo_app.Fellow import Fellow
+from dojo_app.LivingSpace import LivingSpace
+from dojo_app.Office import Office
 # from dojo_app.Staff import Staff
-from .Staff import Staff
+from dojo_app.Staff import Staff
 
 
 class Dojo():
