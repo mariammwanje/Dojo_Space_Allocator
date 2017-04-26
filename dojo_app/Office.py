@@ -4,4 +4,5 @@ from .import Room
 #creating class office
 class Office(Room):
     def __init__(self):
-        pass
+        self.max_number = 6
+        self.occupants = []
