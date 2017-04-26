@@ -1,4 +1,3 @@
-#addition of the usage command to display what exits in the function
 """
 This example uses docopt with the built in cmd module to demonstrate an
 interactive command application.
@@ -6,36 +5,36 @@ interactive command application.
 Usage:
     Command
 """
-#importing cmd
+
 import cmd
-#importing sys
 import sys
-#importing docopt from docopt class
+
 from docopt import docopt
-#importing docopt cmd commands
+
 from docopt_decorator import docopt_cmd
-#creating andela_dojo object from Dojo class
 from dojo_app.Dojo import Dojo
 
 andela_dojo = Dojo()
-
 
 class RoomInteractive(cmd.Cmd):
     intro = 'Welcome to  Andela Dojo Space Allocator Program'
     prompt = 'Command  '
 
-
     @docopt_cmd
     def do_create_room(self, arg):
-        pass
+        """Usage: create_room <room_name> <room_type>"""
+        room_name = arg['<room_name>']
+        room_type = arg['<room_type>']
+
+        andela_dojo.create_room(room_name, room_type)
+
+        print(room_type + 'called' + room_name + 'has been creatd')
 
     @docopt_cmd
     def do_add_person(self, arg):
-        pass
+        """"Usage:  add_person <person_name> <person_type>"""
+        print(arg)
 
 
-
-#printing the file to be pass, sys.argv[1:] recieves inputs as a list from 0 to infinity
 opt = docopt(__doc__, sys.argv[1:])
-#launching our Cmd L Interface class,its a cmdloop() because it loops everytime and repeats automatically
 RoomInteractive().cmdloop()
