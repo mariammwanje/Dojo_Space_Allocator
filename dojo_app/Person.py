@@ -1,5 +1,3 @@
-from dojo_app import Fellow
-from dojo_app import Staff
 
 
 class Person():

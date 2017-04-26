@@ -1,6 +1,6 @@
 
 #creating livingspace class
-from dojo_app.Room import Room
+from .Room import Room
 
 
 class LivingSpace(Room):

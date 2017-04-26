@@ -1,5 +1,5 @@
 #importing from class Room
-from dojo_app.Room import Room
+from .Room import Room
 
 #creating class office
 class Office(Room):

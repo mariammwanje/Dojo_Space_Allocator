@@ -1,13 +1,16 @@
 # from dojo_app.Fellow import Fellow
-from dojo_app.LivingSpace import LivingSpace
-from dojo_app.Office import Office
+from .Fellow import Fellow
+from .LivingSpace import LivingSpace
+from .Office import Office
 # from dojo_app.Staff import Staff
+from .Staff import Staff
 
 
 class Dojo():
     def __init__(self):
         # a list containing all the room
         self.all_rooms = []
+        self.all_persons = []
         #self.staff = []
         #self.fellow = []
         self.occupants = []
@@ -34,7 +37,26 @@ class Dojo():
 
 
 
+    def add_person(self, person_name, person_type):
+        # checking to see if type person_name and person_type are strings
+        if isinstance(person_name, str) and isinstance(person_type, str):
+            # creating a person  of type staff
+            if (person_type == "staff"):
+                self.all_persons.append(Staff(person_name))
+                # person of type staff hashas been created successfully using .format() method
+                return (
+                "person_name({}) " + "person_type({}) has been successfully created".format(person_name, person_type))
 
+            elif (person_type == "fellow"):
+                self.all_persons.append(Fellow(person_name))
+                # person of type fellow has been created successfully using .format() method
+                return (
+                "person_name({}) " + "person_type({}) has been successfully created".format(person_name, person_type))
+
+
+        else:
+            # if it has not be created successfully
+            return ("Person was not created ")
 
     # def add_person(self, name, wants_space):
     #     self.name = name
