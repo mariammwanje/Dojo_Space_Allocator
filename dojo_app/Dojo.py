@@ -7,7 +7,7 @@ class Dojo():
         self.all_rooms = []
         self.room_list = [self.office_list,self.livingspace_list]
         # self.livingspace_list = []
-        # self.living_occupants = []
+        self.occupants = []
 
 
     def create_room(self, room_name, room_type):
