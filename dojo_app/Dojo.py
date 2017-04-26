@@ -5,6 +5,10 @@ class Dojo():
     def __init__(self):
         #a list containing all the room
         self.all_rooms = []
+        self.room_list = [self.office_list,self.livingspace_list]
+        # self.livingspace_list = []
+        # self.living_occupants = []
+
 
     def create_room(self, room_name, room_type):
         #checking to see if type room_name and room_type are strings
