@@ -14,7 +14,6 @@ class TestCaseRoom(unittest.TestCase):
     def test_create_room(self):
         #creating an object andela_dojo from Dojo class
         andela_dojo = Dojo()
-
         initial_room_count = len(andela_dojo.all_rooms)
         #creating an object andela_dojo from Dojo class
         blue_office = andela_dojo.create_room('Blue', 'office')
