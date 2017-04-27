@@ -13,8 +13,8 @@ class Dojo:
         # a list containing all the room
         self.all_rooms = []
         self.all_persons = []
-        self.all_staff = []
         self.all_fellows = []
+        self.all_staff = []
         self.occupants = []
 
     def create_room(self, room_name, room_type):
@@ -44,7 +44,7 @@ class Dojo:
             if (person_type == "staff"):
                 self.all_staff.append(Staff(person_name))
                 # person of type staff has been created successfully using .format() method
-                return (person_name + " " + person_type + " has been successfully created")
+                return (person_name + person_type + " has been successfully created")
 
 
             elif (person_type == "fellow"):
@@ -56,9 +56,9 @@ class Dojo:
                     return (person_name + person_type + "does not need accomodation" + " has been successfully added")
 
                 # checking if person wants to accomodation, append to all_persons list
-                else:
-                    self.all_fellows.append(Fellow(person_name, wants_accomodation))
-                    return (person_name + person_type + wants_accomodation + "has been successfully added")
+                else :
+                        self.all_fellows.append(Fellow(person_name, wants_accomodation))
+                        return (person_name + person_type + wants_accomodation + "has been successfully added")
 
 
             #     # wants_space = "Yes" if args.get("<wants_space>") is "Y" else "No"
