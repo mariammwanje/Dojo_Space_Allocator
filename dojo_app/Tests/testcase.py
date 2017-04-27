@@ -23,7 +23,7 @@ class TestCaseRoom(unittest.TestCase):
         # checking that self.all_rooms[0] should be an instance of office.
         # self.assertTrue(isinstance(self.andela_dojo.all_rooms[0], Office))
 
-# creating aunit test for the create person function
+
 class TestCasePerson(unittest.TestCase):
     def test_add_person(self):
         #creating an object andela_dojo_Person from Dojo
