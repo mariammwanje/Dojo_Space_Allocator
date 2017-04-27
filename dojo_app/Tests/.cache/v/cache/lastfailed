@@ -1,3 +1,3 @@
 {
-  "testcase.py": true
+  "testcase.py::TestCaseRoom::test_create_room": true
 }
