@@ -1,3 +1,3 @@
 {
-  "testcase.py::TestCasePerson::test_add_person": true
+  "testcase.py::TestCaseRoom::test_create_room": true
 }
