@@ -52,15 +52,16 @@ class RoomInteractive(cmd.Cmd):
         print(andela_dojo.add_person(person_type, person_name, wants_accomodation))
         #print message
 
-
-    def do_print_room(self, arg):
-        """
-        Usage:print_room <room_name>
-
+    @docopt_cmd
+    def do_print_rooms(self, arg):
+        """Usage:print_rooms <room_name>
         """
         #equating a list of room names
-        room_name = arg['<room_name>']
+        room_name = arg
         #printing a list of room names
-        print (arg)
+        andela_dojo.print_rooms(room_name)
+        print(andela_dojo.print_rooms(room_name))
+
+
 opt = docopt(__doc__, sys.argv[1:])
 RoomInteractive().cmdloop()

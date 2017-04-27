@@ -9,4 +9,4 @@ class Staff(Person):
     #addition of accomodation as a parameter
     def __init__(self, person_name):
         # inheriting to from class Person the person_name and type staff using super key word
-        super(Staff,self).__init__( 'staff',person_name)
+        super(Staff, self).__init__( "staff",person_name, 'No')
