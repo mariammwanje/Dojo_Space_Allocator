@@ -17,34 +17,34 @@ class Dojo:
         self.all_staff = []
         self.occupants = []
 
-    def create_room(self, room_name, room_type):
+    def create_room(self, room_type, room_name):
         # checking to see if type room_name and room_type are strings
-        if isinstance(room_name, str) and isinstance(room_type, str):
+        if isinstance(room_type, str) and isinstance(room_name, str):
             # checking to see if room created is of type office
             # creating a room  of type office
 
             if (room_type == "office"):
                 self.all_rooms.append(Office(room_name))
                 # if it has been created successfully using .format() method
-                return ("room_name({}) " + "room_type({}) has been successfully created".format(room_name, room_type))
+                return ("room_type({}) room_name({}) " + "has been successfully created".format(room_type, room_name))
 
             elif (room_type == "living_space"):
                 self.all_rooms.append(LivingSpace(room_name))
                 # if it has been created successfully using .format() method
-                return ("room_name({}) " + "room_type({}) has been successfully created".format(room_name, room_type))
+                return ("room_name({}) room_type({}) has been successfully created".format(room_type, room_name))
 
         else:
             # if it has not be created successfully
             return ("Room not created Successfully")
 
-    def add_person(self, person_name, person_type, wants_accomodation):
+    def add_person(self, person_type, person_name, wants_accomodation):
         # checking to see if type person_name and person_type are strings
-        if isinstance(person_name, str) and isinstance(person_type, str):
+        if isinstance(person_type, str) and isinstance(person_name, str):
             # creating a person  of type staff
             if (person_type == "staff"):
                 self.all_staff.append(Staff(person_name))
                 # person of type staff has been created successfully using .format() method
-                return (person_name + person_type + " has been successfully created")
+                return (person_type + person_name + " has been successfully created")
 
 
             elif (person_type == "fellow"):
@@ -53,12 +53,12 @@ class Dojo:
 
                     self.all_fellows.append(Fellow(person_name, wants_accomodation))
 
-                    return (person_name + person_type + "does not need accomodation" + " has been successfully added")
+                    return (person_type + person_name + "does not need accomodation" + " has been successfully added")
 
                 # checking if person wants to accomodation, append to all_persons list
                 else :
                         self.all_fellows.append(Fellow(person_name, wants_accomodation))
-                        return (person_name + person_type + wants_accomodation + "has been successfully added")
+                        return (person_type + person_name + wants_accomodation + "has been successfully added")
 
 
             #     # wants_space = "Yes" if args.get("<wants_space>") is "Y" else "No"

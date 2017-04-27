@@ -33,9 +33,9 @@ class TestCasePerson(unittest.TestCase):
 
 
 
-        
+
         # creating a person by using person name and person type as parameters from add_person method function
-        person1 = andela_dojo.add_person("Neil Armstrong" , "staff")
+        person1 = andela_dojo.add_person("staff", "Neil Armstrong" )
         self.assertTrue(person1)
         new_person_count = len(andela_dojo.all_persons)
         self.assertEqual(new_person_count - initial_person_count, 1)
