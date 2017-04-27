@@ -30,10 +30,6 @@ class TestCasePerson(unittest.TestCase):
         andela_dojo = Dojo()
     #initial number of persons
         initial_person_count = len(andela_dojo.all_persons)
-
-
-
-
         # creating a person by using person name and person type as parameters from add_person method function
         person1 = andela_dojo.add_person("staff", "Neil Armstrong" )
         self.assertTrue(person1)

@@ -34,12 +34,11 @@ class RoomInteractive(cmd.Cmd):
         #creating room from object andela_dojo
             andela_dojo.create_room( room_type, room_name)
         #print message
-            print(room_type  + room  +  'has been successfully created!')
+            print(room_type  + room_name  +  'has been successfully created!')
 
     @docopt_cmd
     def do_add_person(self, arg):
         """"Usage: add_person  <person_type> <person_name> [<wants_accomodation>]
-
 
         """
         # equating arg person_type
@@ -48,6 +47,7 @@ class RoomInteractive(cmd.Cmd):
         person_name = arg['<person_name>']
         #equating arg wants_accomodation
         wants_accomodation = arg['<wants_accomodation>']
+        andela_dojo.add_person(person_name, person_name, wants_accomodation)
         #creating person from object andela_dolo
         print(andela_dojo.add_person(person_type, person_name, wants_accomodation))
         #print message
@@ -55,9 +55,7 @@ class RoomInteractive(cmd.Cmd):
 
     def do_print_room(self, arg):
         """
-        Usage:
-
-        print_room <room_name>
+        Usage:print_room <room_name>
 
         """
         #equating a list of room names
