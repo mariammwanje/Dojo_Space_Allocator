@@ -9,4 +9,5 @@ class Office(Room):
         #inheritating from class Room room name and room type
         Room.__init__(Room, room_name, 'office')
         self.max_no_persons = 6
+        self.all_office_occupants = []
 

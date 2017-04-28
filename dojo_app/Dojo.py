@@ -12,9 +12,6 @@ class Dojo:
         # a list containing all the room
         self.all_rooms = []
         self.all_persons = []
-        self.all_fellows = []
-        self.all_staff = []
-        self.occupants = []
 
     def create_room(self, room_type, room_name):
         # checking to see if type room_name and room_type are strings
@@ -36,36 +33,42 @@ class Dojo:
             # if it has not be created successfully
             print("Room not created Successfully")
 
-    def print_rooms(self):
-        for room_name in self.all_rooms:
-            for room in self.all_rooms:
-                if room.name == room_name:
-                    room = room_name
-                    print(room.name)
 
 
 
 
-    def add_person(self, person_type, person_name, wants_accomodation):
-        # checking to see if type person_name and person_type are strings
-        if isinstance(person_type, str) and isinstance(person_name, str):
-            # creating a person  of type staff
-            if person_type == "staff":
-                self.all_persons.append(Staff(person_name))
-                # person of type staff has been created successfully using .format() method
-                return (person_type  + ' ' + person_name  + ' ' +" has been successfully created")
-            elif person_type == "fellow":
-                # checking person wants to accomodation, if None or No just append to all_persons list
-                if wants_accomodation == None or wants_accomodation == "No":
 
-                    self.all_persons.append(Fellow(person_name, wants_accomodation))
-
-                    return (person_type + ' ' + person_name  + ' ' + "does not need accomodation"  + ' ' +" has been successfully added")
-
-                # checking if person wants to accomodation, append to all_persons list
-                else :
-                    self.all_persons.append(Fellow(person_name, wants_accomodation))
-                return (person_type  + ' ' + person_name + wants_accomodation +   ' ' +"has been successfully added")
-            return(True)
+def print_rooms(self):
+    for room_name in self.all_rooms:
+        for room in self.all_rooms:
+            if room.name == room_name:
+                room = self.all_rooms
+                return (room)
 
 
+def add_person(self, person_type, person_name, wants_accomodation):
+    # checking to see if type person_name and person_type are strings
+    if isinstance(person_type, str) and isinstance(person_name, str):
+        # creating a person  of type staff
+        if person_type == "staff":
+            self.all_persons.append(Staff(person_name))
+            # person of type staff has been created successfully using .format() method
+            return (person_type + ' ' + person_name + ' ' + " has been successfully created")
+        elif person_type == "fellow":
+            # checking person wants to accomodation, if None or No just append to all_persons list
+            if wants_accomodation == None or wants_accomodation == "No":
+
+                self.all_persons.append(Fellow(person_name, wants_accomodation))
+
+                return (
+                person_type + ' ' + person_name + ' ' + "does not need accomodation" + ' ' + " has been successfully added")
+
+            # checking if person wants to accomodation, append to all_persons list
+            else:
+                self.all_persons.append(Fellow(person_name, wants_accomodation))
+            return (person_type + ' ' + person_name + wants_accomodation + ' ' + "has been successfully added")
+        return (True)
+
+
+if __name__ == "__main__":
+    pass
