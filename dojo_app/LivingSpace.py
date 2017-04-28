@@ -8,5 +8,5 @@ class LivingSpace(Room):
         super(LivingSpace,self).__init__(room_name,'living_space')
         #Room.__init__(Room, room_name, 'living_space')
         self.max_number_of_occupants = 4
-        self.all_livngspace_occupants = []
+        self.all_livingspace_occupants = []
 
