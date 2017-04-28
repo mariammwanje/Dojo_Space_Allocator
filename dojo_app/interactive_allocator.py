@@ -1,7 +1,4 @@
 """
-This example uses docopt with the built in cmd module to demonstrate an
-interactive command application.
-
 Usage:
     Command
 """
@@ -17,7 +14,8 @@ from dojo_app.docopt_decorator import docopt_cmd
 andela_dojo = Dojo()
 
 class RoomInteractive(cmd.Cmd):
-    intro = 'Welcome to  Andela Dojo Space Allocator Program'
+    intro = 'Welcome to  Andela Dojo Space Allocator Program' \
+
     prompt = 'Command  '
 
     @docopt_cmd
@@ -32,9 +30,9 @@ class RoomInteractive(cmd.Cmd):
         for room in room_name:
 
         #creating room from object andela_dojo
-            andela_dojo.create_room( room_type, room_name)
+            andela_dojo.create_room( room_type, room)
         #print message
-            print(room_type , room_name , 'has been successfully created!')
+            print(room_type , room, 'has been successfully created!')
 
     @docopt_cmd
     def do_add_person(self, arg):
