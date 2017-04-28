@@ -1,3 +1,4 @@
 {
+  "testcase.py::TestCasePerson::test_is_string": true,
   "testcase.py::TestCaseRoom::test_create_room": true
 }
